@@ -1,0 +1,23 @@
+{
+    "en": {
+        "header": "Surf Siargao",
+        "form_title": "Visitor Information",
+        "name_placeholder": "Name (optional)",
+        "nation_placeholder": "Select Nationality",
+        "submit": "Submit"
+    },
+    "kr": {
+        "header": "서핑 시아르가오",
+        "form_title": "방문자 정보",
+        "name_placeholder": "이름 (선택 사항)",
+        "nation_placeholder": "국적 선택",
+        "submit": "제출"
+    },
+    "zh": {
+        "header": "冲浪 Siargao",
+        "form_title": "访客信息",
+        "name_placeholder": "姓名 (可选)",
+        "nation_placeholder": "选择国籍",
+        "submit": "提交"
+    }
+}

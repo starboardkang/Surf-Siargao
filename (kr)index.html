@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Surf 시아르가오</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background">
+        <div class="top-left">
+            <span class="surf">Surf</span> <span class="divider"> | </span> <span class="siargao">시아르가오</span>
+        </div>
+        
+        <div class="top-right">
+            언어:
+            <select id="language" name="language" onchange="changeLanguage(this.value)" style="color: black;">
+                <option value="(kr)index.html">한국어</option>
+                <option value="index.html">English</option>
+                <option value="(ch)index.html">简体中文</option>
+            </select>
+        </div>
+
+        <div class="form-container">
+            <form>
+                <h1 style="text-align: center;">방문자 정보</h1>
+                <br>
+                <input type="text" id="name" name="name" placeholder="이름 (선택 사항)"><br>
+                <select name="nation" id="nation" aria-placeholder="">
+                    <option value = "">선택 국적</option>
+                    <option value = "Local">현지인</option>
+                    <option value = "Foreign">외국인</option>
+                </select><br>
+                <label for="visit-date" style="font-size: 15px;">방문일:</label>
+                <input type="date" id="date" name="date" placeholder="방문일"><br><br>
+                <input type="submit" value="제출">
+            </form>
+        </div>
+
+        <div class="bottom-center">
+            Copyright © 2025 Group 11 Inc. All rights reserved.
+            | <a href="#">개인정보 처리방침</a> | <a href="#">이용 약관</a>
+        </div>
+
+    </div>
+
+    <script>
+    function changeLanguage(url) {
+        if (url) {
+            window.location.href = url;
+        }
+    }
+    </script>
+</body>
+</html>
