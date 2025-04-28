@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+      <div class="background">
+      <a href="destinations.html"><button id="backButton">← Back</button></a>
+
+      <h2>Write a Review</h2>
+
+      <label>Experience Rating: </label>
+      <form>
+      <div class="stars">
+        <input type="radio" id="five" name="experience" value="5"> 
+        <label for ="five"> ★★★★★</label>
+        <input type="radio" id="four" name="experience" value="4"> 
+        <label for ="four"> ★★★★</label>
+        <input type="radio" id="three" name="experience" value="3"> 
+        <label for ="three"> ★★★</label>
+        <input type="radio" id="two" name="experience" value="2"> 
+        <label for ="two"> ★★</label>
+        <input type="radio" id="one" name="experience" value="1"> 
+        <label for ="one"> ★★★★</label>
+      </div><br>
+
+        <label>Cleanliness Rating: </label>
+        <div class="stars">
+          <input type="radio" id="five" name="cleanliness" value="5"> 
+          <label for ="five"> ★★★★★</label>
+          <input type="radio" id="four" name="cleanliness" value="4"> 
+          <label for ="four"> ★★★★</label>
+          <input type="radio" id="three" name="cleanliness" value="3"> 
+          <label for ="three"> ★★★</label>
+          <input type="radio" id="two" name="cleanliness" value="2"> 
+          <label for ="two"> ★★</label>
+          <input type="radio" id="one" name="cleanliness" value="1"> 
+          <label for ="one"> ★★★★</label>
+       </div><br>
+
+        <label>Amenities Available: </label>
+        <div class="checkbox-group>">
+         <input type="checkbox" id="amenities1" name="amenities1" value="Restrooms">
+         <label for="amenities1">Restrooms</label>
+         <input type="checkbox" id="amenities2" name="amenities2" value="Parking">
+         <label for="amenities2">Parking</label>
+         <input type="checkbox" id="amenities3" name="amenities3" value="Guides">
+         <label for="amenities3">Guides</label>
+        </div><br>
+
+        <label>Write your review</label>
+        <textarea name="review" rows="4" placeholder="Tell us about your experience..." required></textarea>
+
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </body>
+</html> 
