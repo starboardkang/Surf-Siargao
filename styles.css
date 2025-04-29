@@ -1,16 +1,19 @@
+/* Universal Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Raleway', 'Poppins', 'sans-serif';
+    font-family: 'Raleway', 'Poppins', sans-serif;
 }
 
-body, html {
+html, body {
     height: 100%;
+    overflow: auto;  /* Ensures scrolling when content exceeds the viewport */
     font-family: Arial, sans-serif;
     color: #fff;
 }
 
+/* Background Styles */
 .background {
     background-image: url(images/surfing-in-the-philippines-surf-camp-guiding-learn-to-cloud-9-1.jpg);
     background-size: cover;
@@ -27,9 +30,15 @@ body, html {
     width: 100%; height: 100%;
     background: rgba(0, 0, 0, 0.3);
     z-index: 0;
-    pointer-events: none; /* Let clicks pass through overlay */
+    pointer-events: none;
 }
 
+/* Content and Layout Containers */
+.content {
+    padding-bottom: 100px;  /* Adds extra padding at the bottom if needed */
+}
+
+/* Header and Footer */
 .top-left, .top-right, .bottom-center {
     position: relative;
     z-index: 1;
@@ -55,7 +64,6 @@ body, html {
     font-weight: 700;
     letter-spacing: 2px;
 }
-
 
 .divider {
     font-size: 35px;
@@ -88,9 +96,9 @@ body, html {
     text-decoration: none;
 }
 
-.form-container {
+/* Form Containers */
+.form-container, .review-container, .destination-container, .dest-review-container {
     padding: 30px;
-    width: 300px;
     background: rgba(134, 132, 132, 0.5);
     backdrop-filter: blur(10px);
     border-radius: 15px;
@@ -102,36 +110,65 @@ body, html {
     transform: translate(-50%, -50%);
 }
 
-.destination {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    background: rgba(134, 132, 132, 0.5);
-    backdrop-filter: blur(10px);
+/* Form Containers - Specific widths */
+.form-container {
+    width: 300px;
+}
+
+.review-container {
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(12px);
     border-radius: 15px;
-    text-decoration: none; /* Remove underline from links */
-    color: white; /* Text color */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    max-width: 700px;
+    margin: 50px auto;
+    text-align: center;
 }
 
-.destination img{
-    width: 200px;
+.review-container h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #D6BA8C;
+}
+
+.review-container p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #ddd;
+}
+
+.destination-container {
+    width: 300px;
+}
+
+.dest-review-container {
+    width: 500px;
+    height: 500px;
+}
+
+.dest-review-container h2 {
+    text-align: center;
     padding-bottom: 10px;
-    border: none;
-    border-radius: 10px;
 }
 
-.destination:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+/* Flex and Grid Layouts */
+.checkbox-group {
+    display: flex;
+    flex-direction: row;  /* Changed from column to row to align checkbox beside label */
+    gap: 15px;  /* Adjusted the gap for better spacing */
+    align-items: center;  /* Vertically aligns checkbox and label */
+    padding: 10px;
+    width: 100%;  /* Ensure it takes full width */
+    max-width: 400px;  /* Limit the width for better layout control */
+    margin: 0 auto;  /* Center align the group on the page */
 }
-
 
 .center {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* exactly 2 columns */
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     position: absolute;
     top: 50%;
@@ -139,8 +176,8 @@ body, html {
     transform: translate(-50%, -50%);
 }
 
-
-input[type="text"], input[type="email"], input[type="submit"], select#nation, input[type="date"] {
+/* Forms and Inputs */
+input[type="text"], input[type="email"], input[type="submit"], select#nation, input[type="date"], select#language {
     width: 100%;
     padding: 10px;
     margin: 5px 0;
@@ -158,32 +195,63 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #f5c06c;  /* Change to a darker shade */
-    transform: scale(1.05);  /* Slightly enlarge the button */
+    background-color: #f5c06c;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Star Rating */
+.stars {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
 
-select#language {
-    width: 100px;
-    padding: 8px;
-    font-size: 14px;
-    background-color: rgb(255,255,255,0.5);
-    color: black;
-    border: 1px solid rgb(255,255,255,0.5);
-    border-radius: 5px;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    text-align: center;
+.stars input[type="radio"] {
+    display: none;
+}
+
+.stars label {
+    font-size: 2.5rem;
+    color: lightgray;
     cursor: pointer;
-    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray" class="bi bi-caret-down-fill" viewBox="0 0 16 16"><path d="M7.247 11.14 2.451 5.658A.5.5 0 0 1 2.905 5h10.19a.5.5 0 0 1 .454.658l-4.796 5.482a.5.5 0 0 1-.762 0z"/></svg>');
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    background-size: 16px 16px;
-    padding-right: 30px;
+    transition: color 0.3s;
 }
 
+.stars input[type="radio"]:checked ~ label,
+.stars label:hover,
+.stars label:hover ~ label {
+    color: gold;
+}
 
+/* Destination and Review Containers */
+.destination {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(134, 132, 132, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.destination:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.destination img, .dest-review-container img {
+    width: 200px;
+    padding-bottom: 10px;
+    border: none;
+    border-radius: 10px;
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
     .top-left {
         font-size: 22px;
@@ -202,6 +270,15 @@ select#language {
         flex-direction: column;
         align-items: flex-end;
     }
+
+    .center {
+        grid-template-columns: 1fr;
+    }
+
+    .review-container {
+        width: 90%;
+        padding: 20px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -211,9 +288,9 @@ select#language {
         align-items: flex-start;
     }
 
-    .form-container {
+    .form-container, .review-container {
         width: 90%;
-        padding: 20px;
+        padding: 15px;
     }
 
     .top-right {
