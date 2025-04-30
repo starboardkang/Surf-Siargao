@@ -6,21 +6,31 @@
     font-family: 'Raleway', 'Poppins', sans-serif;
 }
 
-html, body {
+html {
     height: 100%;
-    overflow: auto;  /* Ensures scrolling when content exceeds the viewport */
+    overflow: auto;
     font-family: Arial, sans-serif;
     color: #fff;
 }
+
+body {
+    height: 100%;
+    overflow: auto;
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+
 
 /* Background Styles */
 .background {
     background-image: url(images/surfing-in-the-philippines-surf-camp-guiding-learn-to-cloud-9-1.jpg);
     background-size: cover;
     background-position: center;
-    height: 100%;
+    min-height: 100vh;
+    background-attachment: fixed;
     position: relative;
-    overflow: hidden;
+    padding-top: 100px;
+    overflow: visible; 
 }
 
 .background::after {
@@ -35,7 +45,7 @@ html, body {
 
 /* Content and Layout Containers */
 .content {
-    padding-bottom: 100px;  /* Adds extra padding at the bottom if needed */
+    padding-bottom: 100px;
 }
 
 /* Header and Footer */
@@ -45,7 +55,7 @@ html, body {
 }
 
 .top-left {
-    position: absolute;
+    position: fixed;
     top: 20px;
     left: 20px;
     font-size: 28px;
@@ -70,7 +80,7 @@ html, body {
 }
 
 .top-right {
-    position: absolute;
+    position: fixed;
     top: 20px;
     right: 20px;
     font-size: 14px;
@@ -81,7 +91,7 @@ html, body {
 }
 
 .bottom-center {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
     text-align: center;
@@ -94,6 +104,16 @@ html, body {
     color: #fff;
     margin: 0 10px;
     text-decoration: none;
+}
+
+.center {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
 }
 
 /* Form Containers */
@@ -110,7 +130,6 @@ html, body {
     transform: translate(-50%, -50%);
 }
 
-/* Form Containers - Specific widths */
 .form-container {
     width: 300px;
 }
@@ -122,37 +141,37 @@ html, body {
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     color: #fff;
+    overflow-y: auto;
     max-width: 700px;
     margin: 50px auto;
     text-align: center;
+    overflow: auto;
+    position: absolute;
 }
 
-.review-container label[for="review"] {
-  display: block;
-  text-align: left;
-  margin-top: 0px;
-  font-size: 15px;
-  color: #fff;
-  width: 90%;
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+.review-container label[for="review"],
+.review-container label[for="photo"] {
+    display: block;
+    text-align: left;
+    margin-top: 0px;
+    font-size: 15px;
+    color: #fff;
+    width: 90%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 textarea#review {
-  display: block;
-  width: 90%;
-  max-width: 100%;
-  padding: 10px;
-  margin: 10px auto 20px auto;
-  border-radius: 5px;
-  border: none;
-  resize: vertical;
-  font-size: 14px;
-}
-
-.review-container label[for="photo"] {
-  font-size: 14px;
+    display: block;
+    width: 90%;
+    max-width: 100%;
+    padding: 10px;
+    margin: 10px auto 20px auto;
+    border-radius: 5px;
+    border: none;
+    resize: vertical;
+    font-size: 14px;
 }
 
 .review-container h2 {
@@ -184,55 +203,60 @@ textarea#review {
 
 /* Back Button */
 #backButton {
-  position: absolute;
-  top: 70px;
-  left: 20px;
-  padding: 4px 10px;
-  background-color: transparent;
-  border: 1px solid #d6ba8c;
-  color: #d6ba8c;
-  border-radius: 4px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.2s;
+    position: fixed;
+    top: 70px;
+    left: 20px;
+    padding: 4px 10px;
+    background-color: transparent;
+    border: 1px solid #d6ba8c;
+    color: #d6ba8c;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
 }
 
 #backButton:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Flex and Grid Layouts */
 .checkbox-group {
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  gap: 10px 40px;
-  justify-content: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 10px 40px;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .checkbox-group input[type="checkbox"] {
-  display: none;
+    display: none;
 }
 
 .checkbox-group label {
-  display: flex;
-  align-items: center;
-  font-size: 14px;
-  cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    cursor: pointer;
 }
 
 .checkbox-group label::before {
-  content: "☐";
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  margin-right: 4px;
-  font-size: 16px;
+    content: "☐";
+    display: inline-block;
+    padding-bottom: 8px;
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    font-size: 16px;
 }
 
 .checkbox-group input[type="checkbox"]:checked + label::before {
-  content: "☑";
+    content: "☑";
+}
+
+.amenities {
+    text-align: left;
 }
 
 /* Forms and Inputs */
@@ -279,32 +303,34 @@ input[type="submit"]:hover {
 }
 
 .stars input[type="radio"]:checked ~ label {
-  color: lightgray;
+    color: lightgray;
 }
 
 .stars label:hover,
 .stars label:hover ~ label {
-  color: gold;
+    color: gold;
 }
 
 .stars input[type="radio"]:checked + label,
 .stars input[type="radio"]:checked + label ~ label {
-  color: gold;
+    color: gold;
 }
 
 /* Destination and Review Containers */
 .destination {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
     background: rgba(134, 132, 132, 0.5);
     backdrop-filter: blur(10px);
     border-radius: 15px;
     text-decoration: none;
     color: white;
+    padding: 20px;
+    text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+.destination h3{
+    padding-top: 20px;
 }
 
 .destination:hover {
@@ -312,11 +338,28 @@ input[type="submit"]:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
-.destination img, .dest-review-container img {
-    width: 200px;
-    padding-bottom: 10px;
-    border: none;
-    border-radius: 10px;
+.center-destination {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 40px;
+    position: relative;
+    z-index: 1; /* Ensure this stays above the background */
+    transform: scale(.9);
+    margin-top: 120px;
+}
+
+
+.destination img,
+.dest-review-container img {
+    width: 100%;
+    max-width: 100%;
+    height: 200px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 15px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Responsive Styles */
@@ -329,24 +372,32 @@ input[type="submit"]:hover {
         font-size: 28px;
     }
 
-    .form-container {
-        width: 80%;
-        padding: 20px;
-    }
-
     .top-right {
         flex-direction: column;
         align-items: flex-end;
+        font-size: 12px;
     }
 
-    .center {
-        grid-template-columns: 1fr;
-    }
-
-    .review-container {
+    .form-container,
+    .review-container,
+    .dest-review-container {
         width: 90%;
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        margin: 40px auto;
         padding: 20px;
     }
+
+    .center-destination {
+        grid-template-columns: 1fr;
+        padding: 10px;
+      }
+      .destination img {
+        width: 100%;
+        height: auto;
+      }
 }
 
 @media (max-width: 480px) {
@@ -356,15 +407,9 @@ input[type="submit"]:hover {
         align-items: flex-start;
     }
 
-    .form-container, .review-container {
-        width: 90%;
-        padding: 15px;
-    }
-
     .top-right {
         top: 10px;
         right: 10px;
-        font-size: 12px;
     }
 
     select#language {
@@ -374,5 +419,9 @@ input[type="submit"]:hover {
 
     input[type="text"], input[type="email"], input[type="submit"], select#nation {
         font-size: 12px;
+    }
+
+    .form-container, .review-container {
+        padding: 15px;
     }
 }
