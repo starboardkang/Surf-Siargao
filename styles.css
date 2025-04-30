@@ -235,6 +235,16 @@ textarea#review {
   content: "☑";
 }
 
+.center {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 /* Forms and Inputs */
 input[type="text"], input[type="email"], input[type="submit"], select#nation, input[type="date"], select#language {
     width: 100%;
