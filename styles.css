@@ -1,0 +1,427 @@
+/* Universal Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', 'Poppins', sans-serif;
+}
+
+html {
+    height: 100%;
+    overflow: auto;
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+
+body {
+    height: 100%;
+    overflow: auto;
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+
+
+/* Background Styles */
+.background {
+    background-image: url(images/surfing-in-the-philippines-surf-camp-guiding-learn-to-cloud-9-1.jpg);
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    background-attachment: fixed;
+    position: relative;
+    padding-top: 100px;
+    overflow: visible; 
+}
+
+.background::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Content and Layout Containers */
+.content {
+    padding-bottom: 100px;
+}
+
+/* Header and Footer */
+.top-left, .top-right, .bottom-center {
+    position: relative;
+    z-index: 1;
+}
+
+.top-left {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.surf {
+    color: #459EE2;
+    font-weight: 200;
+}
+
+.siargao {
+    color: #D6BA8C;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.divider {
+    font-size: 35px;
+}
+
+.top-right {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 14px;
+    opacity: 80%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.bottom-center {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    background-color: #3b342e;
+    padding: 20px 10px;
+}
+
+.bottom-center a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.center {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+/* Form Containers */
+.form-container, .review-container, .destination-container, .dest-review-container {
+    padding: 30px;
+    background: rgba(134, 132, 132, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.form-container {
+    width: 300px;
+}
+
+.review-container {
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(12px);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    overflow-y: auto;
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+    overflow: auto;
+    position: absolute;
+}
+
+.review-container label[for="review"],
+.review-container label[for="photo"] {
+    display: block;
+    text-align: left;
+    margin-top: 0px;
+    font-size: 15px;
+    color: #fff;
+    width: 90%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+textarea#review {
+    display: block;
+    width: 90%;
+    max-width: 100%;
+    padding: 10px;
+    margin: 10px auto 20px auto;
+    border-radius: 5px;
+    border: none;
+    resize: vertical;
+    font-size: 14px;
+}
+
+.review-container h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #D6BA8C;
+}
+
+.review-container p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #ddd;
+}
+
+.destination-container {
+    width: 300px;
+}
+
+.dest-review-container {
+    width: 500px;
+    height: 500px;
+}
+
+.dest-review-container h2 {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+/* Back Button */
+#backButton {
+    position: fixed;
+    top: 70px;
+    left: 20px;
+    padding: 4px 10px;
+    background-color: transparent;
+    border: 1px solid #d6ba8c;
+    color: #d6ba8c;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#backButton:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Flex and Grid Layouts */
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 10px 40px;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    display: none;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.checkbox-group label::before {
+    content: "☐";
+    display: inline-block;
+    padding-bottom: 8px;
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    font-size: 16px;
+}
+
+.checkbox-group input[type="checkbox"]:checked + label::before {
+    content: "☑";
+}
+
+.amenities {
+    text-align: left;
+}
+
+/* Forms and Inputs */
+input[type="text"], input[type="email"], input[type="submit"], select#nation, input[type="date"], select#language {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    color: black;
+}
+
+input[type="submit"] {
+    background-color: #D6BA8C;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #f5c06c;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Star Rating */
+.stars {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 10px;
+}
+
+.stars input[type="radio"] {
+    display: none;
+}
+
+.stars label {
+    font-size: 2.5rem;
+    color: lightgray;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.stars input[type="radio"]:checked ~ label {
+    color: lightgray;
+}
+
+.stars label:hover,
+.stars label:hover ~ label {
+    color: gold;
+}
+
+.stars input[type="radio"]:checked + label,
+.stars input[type="radio"]:checked + label ~ label {
+    color: gold;
+}
+
+/* Destination and Review Containers */
+.destination {
+    background: rgba(134, 132, 132, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    text-decoration: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+.destination h3{
+    padding-top: 20px;
+}
+
+.destination:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.center-destination {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 40px;
+    position: relative;
+    z-index: 1; /* Ensure this stays above the background */
+    transform: scale(.9);
+    margin-top: 120px;
+}
+
+
+.destination img,
+.dest-review-container img {
+    width: 100%;
+    max-width: 100%;
+    height: 200px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 15px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .top-left {
+        font-size: 22px;
+    }
+
+    .divider {
+        font-size: 28px;
+    }
+
+    .top-right {
+        flex-direction: column;
+        align-items: flex-end;
+        font-size: 12px;
+    }
+
+    .form-container,
+    .review-container,
+    .dest-review-container {
+        width: 90%;
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        margin: 40px auto;
+        padding: 20px;
+    }
+
+    .center-destination {
+        grid-template-columns: 1fr;
+        padding: 10px;
+      }
+      .destination img {
+        width: 100%;
+        height: auto;
+      }
+}
+
+@media (max-width: 480px) {
+    .top-left {
+        font-size: 18px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .top-right {
+        top: 10px;
+        right: 10px;
+    }
+
+    select#language {
+        width: 90px;
+        font-size: 12px;
+    }
+
+    input[type="text"], input[type="email"], input[type="submit"], select#nation {
+        font-size: 12px;
+    }
+
+    .form-container, .review-container {
+        padding: 15px;
+    }
+}
