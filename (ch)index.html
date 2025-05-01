@@ -2,56 +2,70 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>Surf 思阿尔高</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>冲浪思阿尔高</title>
+    <link rel="stylesheet" href="styles1.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="background">
+
+    <!-- HEADER SECTION -->
+    <header>
         <div class="top-left">
             <span class="surf">Surf</span> <span class="divider"> | </span> <span class="siargao">思阿尔高</span>
         </div>
-        
+
         <div class="top-right">
             语言:
-            <select id="language" name="language" onchange="changeLanguage(this.value)" style="color: black;">
+            <select id="language" name="language" onchange="changeLanguage(this.value)">
                 <option value="(ch)index.html">简体中文</option>
-                <option value="index.html">English</option>
                 <option value="(kr)index.html">한국어</option>
+                <option value="index.html">English</option>
             </select>
         </div>
+    </header>
 
-        <div class="form-container">
-            <form>
-                <h1 style="text-align: center;">访客信息</h1>
-                <br>
-                <input type="text" id="name" name="name" placeholder="姓名 (可选)"><br>
-                <select name="nation" id="nation" aria-placeholder="">
-                    <option value = "">选择国籍</option>
-                    <option value = "Local">本地人</option>
-                    <option value = "Foreign">外国人</option>
-                </select><br>
-                <label for="visit-date" style="font-size: 15px;">访问日期:</label>
-                <input type="date" id="date" name="date" placeholder="访问日期"><br><br>
-                <input type="submit" value="提交" style="font-weight: bold">
-            </form>
+    <!-- MAIN CONTENT SECTION -->
+    <main>
+        <div class="background">
+            <div class="form-container">
+                <form action="(ch)destinations.html" method="GET">
+                    <h1>访客信息</h1>
+
+                    <label for="name">姓名（可选）:</label>
+                    <input type="text" id="name" name="name" placeholder="姓名"><br>
+
+                    <label for="nation">国籍:</label>
+                    <select name="nation" id="nation" required>
+                        <option value="">请选择国籍</option>
+                        <option value="Local">本地</option>
+                        <option value="Foreign">外国</option>
+                    </select><br>
+
+                    <label for="date">访问日期:</label>
+                    <input type="date" id="date" name="date" required><br><br>
+
+                    <a href="(ch)destinations.html"><input type="submit" value="提交"></a>
+                </form>
+            </div>
         </div>
+    </main>
 
-        <div class="bottom-center">
-            Copyright © 2025 Group 11 Inc. All rights reserved.
-            | <a href="#">隐私政策</a> | <a href="#">使用条款</a>
-        </div>
+    <!-- FOOTER SECTION -->
+    <footer class="bottom-center">
+        版权所有 © 2025 第11组有限公司。保留所有权利。
+        | <a href="#">隐私政策</a> | <a href="#">使用条款</a>
+    </footer>
 
-    </div>
-
+    <!-- LANGUAGE SWITCH SCRIPT -->
     <script>
-    function changeLanguage(url) {
-        if (url) {
-            window.location.href = url;
+        function changeLanguage(url) {
+            if (url) {
+                window.location.href = url;
+            }
         }
-    }
     </script>
 </body>
 </html>

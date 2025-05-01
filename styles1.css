@@ -168,7 +168,7 @@ form select {
     color: #333;
 }
 
-form input[type="submit"] {
+.submit {
     width: 100%;
     padding: 0.7rem;
     background-color: #D6BA8C;
@@ -179,6 +179,23 @@ form input[type="submit"] {
     cursor: pointer;
     transition: background-color 0.3s;
 }
+
+.submit:hover{
+    background-color: #ac9571;
+}
+
+form input[type="submit"]{
+    width: 100%;
+    padding: 0.7rem;
+    background-color: #D6BA8C;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
 
 form input[type="submit"]:hover {
     background-color: #ac9571;
@@ -320,10 +337,11 @@ form input[type="submit"]:hover {
     color: #fff;
     overflow-y: auto;
     max-width: 600px;
-    margin: 50px auto;
+    margin-top: 150px;
     text-align: center;
     overflow: auto;
     position: absolute;
+
 }
 
 .review-container label[for="review"],

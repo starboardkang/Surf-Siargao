@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles1.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Surf | 시아르가오 - 목적지</title>
+</head>
+<body>
+    <header>
+        <div class="top-left">
+            <a href="(kr)index.html"><button id="backButton">뒤로가기</button></a>
+            <span class="surf">Surf</span>
+            <span class="divider"> | </span>
+            <span class="siargao">시아르가오</span>
+        </div>
+        <div class="top-right">
+            언어:
+            <select id="language" name="language" onchange="changeLanguage(this.value)">
+                <option value="destinations.html">English</option>
+                <option value="(kr)destinations.html" selected>한국어</option>
+                <option value="(ch)destinations.html">简体中文</option>
+            </select>
+        </div>
+    </header>
+    <main>
+        <a href="(kr)index.html"><button id="backButton">뒤로가기</button></a>
+
+        <div class="center-destination">
+            <a href="(kr)review-page.html" class="destination">
+                <img src="https://mindanews.com/wp-content/uploads/2020/01/05sugbalagoon22.jpg" alt="숙바 라군 항구">
+                <h3>숙바 라군 항구</h3>
+            </a>
+            <a href="(kr)review-page.html" class="destination">
+                <img src="https://lh3.googleusercontent.com/gpms-cs-s/AIMqDu1NhEYwC7Rj2evMIWmrEFPqblQh5KBduZpyi69M3n4sjvXAAXpT6cti5zeFf7ig5hCAINd4SP6A3Hux216WQo6NHdW6Ozt471D7yjCZUqvrebsubMt2ssUPpt7SrSZ3gP4-krvQ=s1360-w1360-h1020-rw" alt="클라우드 9 서핑 지역">
+                <h3>클라우드 9 서핑 지역</h3>
+            </a>
+            <a href="(kr)review-page.html" class="destination">
+                <img src="https://i0.wp.com/backpackingwithabook.com/wp-content/uploads/2022/02/Magpupungko-Pools-Pilar-Siargao.png?fit=940%2C788&ssl=1" alt="막푸풍코 암석 풀장">
+                <h3>막푸풍코 암석 풀장</h3>
+            </a>
+            <a href="(kr)review-page.html" class="destination">
+                <img src="https://image.kkday.com/v2/image/get/w_1900%2Cc_fit%2Cq_55/s1.kkday.com/product_125460/20211223030714_ej2wt/jpg" alt="다쿠 섬">
+                <h3>다쿠 섬</h3>
+            </a>
+            <a href="(kr)review-page.html" class="destination">
+                <img src="https://dailytravelpill.com/wp-content/uploads/2020/10/guyam-island-siargao-8.jpg" alt="구얌 섬">
+                <h3>구얌 섬</h3>
+            </a>
+            <a href="(kr)review-page.html" class="destination">
+                <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/174861720.jpg?k=26ef21c84fe7d437381d7fa1511fee019be3ae8f7d0b4ddead885b7df539cda2&o=&hp=1" alt="시아르가오 리조트">
+                <h3>시아르가오 리조트</h3>
+            </a>
+        </div>
+    </main>
+    <footer class="bottom-center">
+        저작권 © 2025 11조 Inc. 모든 권리 보유.
+        | <a href="#">개인정보처리방침</a> | <a href="#">이용 약관</a>
+    </footer>
+
+    <script>
+        function changeLanguage(url) {
+            if (url) {
+                window.location.href = url;
+            }
+        }
+    </script>
+</body>
+</html>
