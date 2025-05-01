@@ -1,0 +1,371 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Poppins', 'Raleway', sans-serif;
+    color: #fff;
+    background: #000;
+}
+
+/* Layout Setup */
+body {
+    display: flex;
+    flex-direction: column;
+    background: url(images/surfing-in-the-philippines-surf-camp-guiding-learn-to-cloud-9-1.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+
+/* Fixed Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(101, 101, 101, 0.211);    
+    z-index: 1000;
+    backdrop-filter: blur(80px);
+}
+
+.surf {
+    color: #459EE2;
+    font-weight: 200;
+    font-size: 25px;
+}
+
+.siargao {
+    color: #D6BA8C;
+    letter-spacing: 3px;
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.divider {
+    font-size: 25px;
+}
+
+select#language{
+    width: 50%;
+    padding: 5px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    color: black;
+}
+
+
+/* Back Button */
+#backButton {
+    top: 60px;
+    left: 20px;
+    margin-top: 25px;
+    margin-right: 10px;
+    padding: 4px 10px;
+    background-color: transparent;
+    border: 1px solid #d6ba8c;
+    color: #d6ba8c;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    position: fixed;
+}
+
+#backButton:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Fixed Footer */
+footer.bottom-center {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 60px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 0.8rem 0;
+    background-color: rgba(101, 101, 101, 0.211);
+    color: #ffffff;
+    z-index: 1000;
+    backdrop-filter: blur(80px);
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+footer a:hover {
+    color: #f8d7a3;
+}
+
+/* Main Scrollable Area */
+main {
+    flex: 1;
+    margin-top: 60px; /* space for fixed header */
+    margin-bottom: 60px; /* space for fixed footer */
+    overflow-y: auto;
+    background: url('your-image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+
+/* Form Container */
+.form-container {
+    padding: 30px;
+    background: rgba(134, 132, 132, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    max-width: 400px;
+    width: 100%;
+}
+
+
+form h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 700px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+form input[type="text"],
+form input[type="date"],
+form select {
+    width: 100%;
+    padding: 0.7rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+}
+
+form input[type="submit"] {
+    width: 100%;
+    padding: 0.7rem;
+    background-color: #D6BA8C;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form input[type="submit"]:hover {
+    background-color: #ac9571;
+}
+
+/* Destination Card Styles */
+.title-dest {
+    text-align: center;  /* Center the title text horizontally */
+    margin-top: 40px;    /* Add some space from the top */
+}
+
+.title-dest h1 {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin: 0; /* Remove default margin */
+}
+
+
+
+.destination {
+    background: rgba(134, 132, 132, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    text-decoration: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+.destination h3 {
+    padding-top: 20px;
+    font-size: 1.2rem; /* Added font size for better control */
+    font-weight: bold; /* To make headings stand out more */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Adding a subtle text shadow */
+}
+
+/* Hover Effects */
+.destination:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover for a better effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Center Destination Layout */
+.center-destination {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(250px, 1fr)); /* Flexible 3-column grid */
+    gap: 15px;
+    padding: 40px;
+    position: relative;
+    z-index: 1;
+    
+    transform: scale(1); /* Removed the scale .9 for proper layout rendering */
+}
+
+/* Destination Image Styling */
+.destination img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Ensures images fill the container without distortion */
+    margin: 0 auto;
+    display: block;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+  
+.review-container, .destination-container, .dest-review-container {
+    padding: 30px;
+    background: rgba(134, 132, 132, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.form-container {
+    width: 300px;
+}
+
+.review-container {
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(12px);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    overflow-y: auto;
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+    overflow: auto;
+    position: absolute;
+}
+
+.review-container label[for="review"],
+.review-container label[for="photo"] {
+    display: block;
+    text-align: left;
+    margin-top: 0px;
+    font-size: 15px;
+    color: #fff;
+    width: 90%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+textarea#review {
+    display: block;
+    width: 90%;
+    max-width: 100%;
+    padding: 10px;
+    margin: 10px auto 20px auto;
+    border-radius: 5px;
+    border: none;
+    resize: vertical;
+    font-size: 14px;
+}
+
+.review-container h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #D6BA8C;
+}
+
+.review-container p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #ddd;
+}
+
+.destination-container {
+    width: 300px;
+}
+
+.dest-review-container {
+    width: 500px;
+    height: 500px;
+}
+
+.dest-review-container h2 {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    .surf {
+        color: #459EE2;
+        font-weight: 200;
+    }
+    
+    .siargao {
+        color: #D6BA8C;
+        font-weight: 700;
+        letter-spacing: 2px;
+    }
+    
+    .divider {
+        font-size: 20px;
+    }
+
+    .form-container {
+        padding: 1.5rem;
+    }
+
+    .center-destination {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #backButton{
+        margin-top: 60px;
+        margin-left: -10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .center-destination {
+        grid-template-columns: 1fr;
+    }
+}
